@@ -1,0 +1,118 @@
+<!-- src/components/Contact.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+
+  <!-- Link ke CSS Tailwind untuk styling halaman -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  
+  <!-- Link ke icon library untuk menampilkan ikon yang lebih keren -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/react-icons/4.2.0/react-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <!-- Tambahan untuk membuat tampilan responsif (menyesuaikan layar perangkat) -->
+  <style>
+    /* Media Query untuk layar besar (di atas 640px) */
+    @media (min-width: 640px) {
+      .contact-container {
+        grid-template-columns: 1fr 1fr; /* Dua kolom */
+      }
+    }
+
+    /* Media Query untuk layar lebih besar lagi (1024px ke atas) */
+    @media (min-width: 1024px) {
+      .contact-container {
+        grid-template-columns: 1fr 1fr 1fr; /* Tiga kolom */
+      }
+    }
+
+    /* Layout untuk perangkat kecil (di bawah 640px), ubah jadi satu kolom */
+    @media (max-width: 639px) {
+      .contact-container {
+        grid-template-columns: 1fr; /* Satu kolom */
+      }
+
+      /* Untuk membuat elemen kontak ditampilkan secara vertikal pada layar kecil */
+      .contact-container .flex {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* CSS untuk membuat header tetap di atas saat di-scroll */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header bagian atas yang berisi logo dan menu navigasi -->
+  <header class="bg-gray-800 text-white p-4 flex justify-between items-center">
+    <!-- Logo "H" di kiri -->
+    <div class="text-3xl font-bold text-gray-100">
+      H <!-- Logo atau nama aplikasi bisa diganti dengan gambar atau teks lain -->
+    </div>
+
+    <!-- Menu navigasi untuk tampilan desktop (tampilan besar) -->
+    <nav class="hidden md:flex space-x-6">
+      <!-- Link navigasi untuk halaman lain seperti Home, About, Contact -->
+      <a href="./index.html" class="hover:bg-gray-600 px-4 py-2 rounded">Home</a>
+      <a href="./About.html" class="hover:bg-gray-600 px-4 py-2 rounded">About</a>
+      <a href="./Contact.html" class="hover:bg-gray-600 px-4 py-2 rounded">Contact</a>
+    </nav>
+
+    <!-- Menu untuk tampilan mobile (tombol untuk menu dropdown) -->
+    <nav class="md:hidden">
+      <button class="text-white">Menu</button>
+    </nav>
+  </header>
+
+  <!-- Bagian Konten utama dari halaman Contact -->
+  <div class="flex items-center justify-center min-h-screen bg-gray-100 px-6 py-8">
+    <div class="container mx-auto text-center">
+      <!-- Judul halaman 'Contact Me' -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-900 font-extrabold mb-8">
+        Contact Me
+      </h1>
+      
+      <!-- Container untuk info kontak dengan grid responsif -->
+      <div class="bg-white p-8 rounded-lg shadow-2xl max-w-3xl mx-auto contact-container grid gap-6">
+        <div class="flex justify-center items-center space-x-6 mb-6">
+          <!-- Bagian untuk menampilkan Email -->
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-envelope text-blue-500" style="font-size: 30px;"></i>
+            <p class="text-lg sm:text-xl text-gray-800">maryaheba08@gmail.com</p>
+          </div>
+          
+          <!-- Bagian untuk menampilkan nomor WhatsApp -->
+          <div class="flex items-center space-x-2">
+            <i class="fab fa-whatsapp text-green-500" style="font-size: 30px;"></i>
+            <p class="text-lg sm:text-xl text-gray-800">085737671741</p>
+          </div>
+          
+          <!-- Bagian untuk menampilkan Instagram -->
+          <div class="flex items-center space-x-2">
+            <i class="fab fa-instagram text-pink-500" style="font-size: 30px;"></i>
+            <p class="text-lg sm:text-xl text-gray-800">maryaheba_</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deskripsi singkat di bawah ikon kontak -->
+      <div class="col-span-2 mt-4">
+        <p class="text-sm sm:text-base text-gray-600 max-w-xl mx-auto">
+          Feel free to reach out to me through email, WhatsApp, or Instagram! I'm available to discuss anything you'd like to know, whether it's about a project, collaboration, or any other inquiries.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

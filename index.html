@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Menentukan karakter encoding dan tampilan responsif untuk perangkat mobile -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Page</title>
+
+  <!-- Menambahkan link untuk CDN Tailwind CSS agar bisa pakai kelas-kelas dari Tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Menambahkan Font Awesome untuk ikon sosial media seperti Instagram, GitHub, LinkedIn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Tf0pZQZkGpGlmDybXJk0EIlFuOatZTnAiRMspnI1ViKzBmy+CSdNykg0N5C7Q3sOXTo6r/NBxfO6i80yCzUM4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* Bagian styling untuk layout responsif */
+    @media (min-width: 640px) {
+      .home-container {
+        grid-template-columns: 1fr 1fr; /* Membuat dua kolom untuk layar kecil dan lebih besar */
+        gap: 20px; /* Menambahkan jarak antar elemen */
+      }
+    }
+
+    /* Untuk layar lebih besar lagi (tablet ke atas) */
+    @media (min-width: 1024px) {
+      .home-container {
+        grid-template-columns: 1fr 1fr; /* Tetap dua kolom */
+      }
+    }
+
+    /* Styling untuk gambar agar responsif dan tidak melebar melebihi batas */
+    img {
+      max-width: 100%; /* Gambar mengikuti lebar container */
+      height: auto; /* Mengatur tinggi gambar otomatis agar proporsional */
+    }
+
+    /* Animasi untuk tulisan "Welcome" */
+    @keyframes moveText {
+      0% {
+        transform: translateX(-100%); /* Mulai dari luar layar sebelah kiri */
+      }
+      50% {
+        transform: translateX(20px); /* Bergerak sedikit ke kanan */
+      }
+      100% {
+        transform: translateX(0); /* Berhenti di posisi semula */
+      }
+    }
+
+    /* Menerapkan animasi pada teks dengan class animated-text */
+    .animated-text {
+      animation: moveText 2s ease-out forwards; /* Durasi animasi 2 detik */
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Bagian Header -->
+  <header class="bg-gray-800 text-white p-4 flex justify-between items-center sticky top-0 z-10">
+    <div class="text-3xl font-bold text-gray-100">
+      H <!-- Nama atau Logo bisa disini -->
+    </div>
+
+    <!-- Navigasi untuk desktop -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="./index.html" class="hover:bg-gray-600 px-4 py-2 rounded">Home</a>
+      <a href="./About.html" class="hover:bg-gray-600 px-4 py-2 rounded">About</a>
+      <a href="./Contact.html" class="hover:bg-gray-600 px-4 py-2 rounded">Contact</a>
+    </nav>
+
+    <!-- Menu untuk tampilan mobile -->
+    <nav class="md:hidden">
+      <button class="text-white">Menu</button>
+    </nav>
+  </header>
+
+  <!-- Bagian Konten Utama -->
+  <div class="flex items-center justify-center min-h-screen px-6 py-8">
+    <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-12 w-full max-w-7xl">
+
+      <!-- Bagian Teks -->
+      <div class="text-left max-w-lg">
+        <!-- Judul dengan animasi -->
+        <h1 class="text-5xl font-extrabold text-gray-800 mb-4 animated-text">
+          Welcome
+        </h1>
+        <p class="text-3xl font-semibold text-gray-800 mb-4">
+          I'm Heba
+        </p>
+        <p class="text-xl text-gray-700 mb-6">
+          I'm a student majoring in Informatics. Passionate about technology and eager to create innovative solutions.
+        </p>
+
+        <!-- Ikon Sosial Media -->
+        <div class="flex space-x-4 mt-6">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/maryaheba_?igsh=MTJvZ2NrdmZ6cGF1Mw==" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-8 h-8"/>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/CipungAbubu" target="_blank" rel="noopener noreferrer">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-8 h-8"/>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/heba-a-raaf/" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.logo.wine/a/logo/LinkedIn/LinkedIn-Logo.wine.svg" alt="LinkedIn" class="w-8 h-8"/>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bagian Gambar -->
+      <div class="w-full sm:w-72 sm:h-96 md:w-96 md:h-128">
+        <img 
+          src="./public/assets/project1.jpg" 
+          alt="Heba" 
+          class="w-full h-full object-cover border-4 border-gray-800 rounded-lg shadow-xl"
+        />
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

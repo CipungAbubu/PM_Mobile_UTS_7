@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Menentukan karakter set untuk halaman agar bisa menampilkan teks dengan benar -->
+  <meta charset="UTF-8">
+  
+  <!-- Meta tag untuk viewport yang memastikan tampilan halaman dapat diubah sesuai ukuran layar perangkat, menjadikannya lebih responsif -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Title halaman yang akan ditampilkan di tab browser -->
+  <title>About Me</title>
+  
+  <!-- Link untuk menyertakan file CSS Tailwind versi 2.0.3, yang digunakan untuk styling halaman agar lebih mudah dan cepat -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+  <!-- Bagian Header, di sini ada logo atau teks dan menu navigasi -->
+  <header class="bg-gray-800 text-white p-4 flex justify-between items-center sticky top-0 z-50">
+    <!-- Logo teks 'H' yang ada di kiri header, bisa diganti dengan logo atau teks lainnya -->
+    <div class="text-3xl font-bold text-gray-100">
+      H <!-- Ini adalah tempat logo atau nama aplikasi, bisa diganti sesuai kebutuhan -->
+    </div>
+
+    <!-- Menu Navigasi untuk tampilan desktop -->
+    <nav class="hidden md:flex space-x-6">
+      <!-- Link navigasi menuju halaman lain seperti Home, About, dan Contact -->
+      <a href="./index.html" class="hover:bg-gray-600 px-4 py-2 rounded">Home</a>
+      <a href="./About.html" class="hover:bg-gray-600 px-4 py-2 rounded">About</a>
+      <a href="./Contact.html" class="hover:bg-gray-600 px-4 py-2 rounded">Contact</a>
+    </nav>
+
+    <!-- Menu navigasi yang tampil saat tampilan di perangkat mobile -->
+    <nav class="md:hidden">
+      <!-- Tombol untuk menu yang hanya muncul di perangkat mobile -->
+      <button class="text-white">Menu</button>
+    </nav>
+  </header>
+
+  <!-- Bagian Konten Utama 'About Me' -->
+  <div class="flex items-center justify-center min-h-screen bg-gray-100 px-6 py-8">
+    <!-- Container untuk membungkus konten utama halaman, supaya selalu berada di tengah layar -->
+    <div class="container mx-auto text-center px-4">
+      <!-- Judul utama untuk halaman About Me -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-900 font-extrabold mb-8">
+        About Me
+      </h1>
+
+      <!-- Kotak putih untuk menampilkan informasi pribadi -->
+      <div class="bg-white p-10 rounded-xl shadow-xl max-w-4xl mx-auto">
+        <!-- Paragraf pertama menjelaskan sedikit tentang latar belakang pendidikan dan minat dalam bidang web development -->
+        <p class="text-lg sm:text-xl text-gray-800 leading-relaxed mb-6">
+          I am a 5th semester student at Universitas Teknologi Digital Indonesia, majoring in Informatics, with a current GPA of 3.0. 
+          I have a strong interest in web development, particularly in fullstack and frontend development. I have learned and am capable of using several 
+          programming languages and technologies, including HTML, CSS, JavaScript, Tailwind, Bootstrap, React.js, Node.js, Express.js, MySQL, PostgreSQL, MongoDB, 
+          MongoDB Compass, Swagger, and Postman.
+        </p>
+
+        <!-- Paragraf kedua tentang pengalaman pribadi dan motivasi untuk terus berkembang dalam bidang teknologi -->
+        <p class="text-lg sm:text-xl text-gray-800 leading-relaxed mb-8">
+          I have also worked on several web-based projects that have helped me deepen my understanding of modern application development technologies. 
+          Additionally, I am highly motivated to continue learning and growing in the field of technology, with the goal of becoming a professional in web development, 
+          especially frontend development.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
