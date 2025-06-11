@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Menentukan karakter set untuk halaman agar bisa menampilkan teks dengan benar -->
+  <!-- Untuk nentuin jenis karakter biar teks kebaca dengan benar -->
   <meta charset="UTF-8">
   
-  <!-- Meta tag untuk viewport yang memastikan tampilan halaman dapat diubah sesuai ukuran layar perangkat, menjadikannya lebih responsif -->
+  <!-- Untuk bikin tampilan web responsif di berbagai ukuran layar -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Title halaman yang akan ditampilkan di tab browser -->
+  <!-- Judul yang muncul di tab browser -->
   <title>About Me</title>
   
-  <!-- Link ke file Tailwind CSS versi 2.0.3 lokal -->
-<link href="/public/css/tailwind-2.0.3.min.css" rel="stylesheet">
-
+  <!-- Untuk ngelink file CSS Tailwind lokal versi 2.0.3 -->
+  <link href="/public/css/tailwind-2.0.3.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
 
-  <!-- Bagian Header, di sini ada logo atau teks dan menu navigasi -->
+  <!-- Bagian atas halaman, isinya logo dan menu navigasi -->
   <header class="bg-gray-800 text-white p-4 flex justify-between items-center sticky top-0 z-50">
-    <!-- Logo teks 'H' yang ada di kiri header, bisa diganti dengan logo atau teks lainnya -->
+    <!-- Untuk logo/tulisan di kiri atas -->
     <div class="text-3xl font-bold text-gray-100">
-      H <!-- Ini adalah tempat logo atau nama aplikasi, bisa diganti sesuai kebutuhan -->
+      H <!-- Ini logo atau nama web, bisa diganti sesuai kebutuhan -->
     </div>
 
-    <!-- Menu Navigasi untuk tampilan desktop -->
+    <!-- Menu navigasi pas tampilan desktop -->
     <nav class="hidden md:flex space-x-6">
-      <!-- Link navigasi menuju halaman lain seperti Home, About, dan Contact -->
+      <!-- Link ke halaman lain: Home, About, Contact -->
       <a href="index.html" class="hover:bg-gray-600 px-4 py-2 rounded">Home</a>
       <a href="About.html" class="hover:bg-gray-600 px-4 py-2 rounded">About</a>
       <a href="Contact.html" class="hover:bg-gray-600 px-4 py-2 rounded">Contact</a>
     </nav>
 
-    <!-- Menu untuk tampilan mobile -->
-<nav class="md:hidden relative">
-  <button id="mobile-menu-button" class="text-white focus:outline-none">
-    Menu
-  </button>
-  <div id="mobile-menu" class="absolute right-0 mt-2 bg-gray-800 text-white rounded shadow-lg w-40 hidden">
-    <a href="index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
-    <a href="About.html" class="block px-4 py-2 hover:bg-gray-600">About</a>
-    <a href="Contact.html" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
-  </div>
-</nav>
-
+    <!-- Menu navigasi pas tampilan mobile -->
+    <nav class="md:hidden relative">
+      <button id="mobile-menu-button" class="text-white focus:outline-none">
+        Menu <!-- Tombol untuk munculin menu di HP -->
+      </button>
+      <div id="mobile-menu" class="absolute right-0 mt-2 bg-gray-800 text-white rounded shadow-lg w-40 hidden">
+        <!-- Link navigasi yang muncul setelah tombol ditekan -->
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
+        <a href="About.html" class="block px-4 py-2 hover:bg-gray-600">About</a>
+        <a href="Contact.html" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Bagian Konten Utama 'About Me' -->
+  <!-- Bagian konten utama untuk halaman 'About Me' -->
   <div class="flex items-center justify-center min-h-screen bg-gray-100 px-6 py-8">
-    <!-- Container untuk membungkus konten utama halaman, supaya selalu berada di tengah layar -->
+    <!-- Container utama biar isi kontennya selalu di tengah -->
     <div class="container mx-auto text-center px-4">
-      <!-- Judul utama untuk halaman About Me -->
+      <!-- Judul utama halaman -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-900 font-extrabold mb-8">
         About Me
       </h1>
 
-      <!-- Kotak putih untuk menampilkan informasi pribadi -->
+      <!-- Penjelasan tentang diri sendiri -->
       <div class="bg-white p-10 rounded-xl shadow-xl max-w-4xl mx-auto">
-        <!-- Paragraf pertama menjelaskan sedikit tentang latar belakang pendidikan dan minat dalam bidang web development -->
+        <!-- Paragraf latar belakang  -->
         <p class="text-lg sm:text-xl text-gray-800 leading-relaxed mb-6">
           I am a 5th semester student at Universitas Teknologi Digital Indonesia, majoring in Informatics, with a current GPA of 3.0. 
           I have a strong interest in web development, particularly in fullstack and frontend development. I have learned and am capable of using several 
@@ -64,7 +63,7 @@
           MongoDB Compass, Swagger, and Postman.
         </p>
 
-        <!-- Paragraf kedua tentang pengalaman pribadi dan motivasi untuk terus berkembang dalam bidang teknologi -->
+        <!-- Paragraf  pengalaman dan motivasi -->
         <p class="text-lg sm:text-xl text-gray-800 leading-relaxed mb-8">
           I have also worked on several web-based projects that have helped me deepen my understanding of modern application development technologies. 
           Additionally, I am highly motivated to continue learning and growing in the field of technology, with the goal of becoming a professional in web development, 
@@ -73,14 +72,16 @@
       </div>
     </div>
   </div>
-<script>
-  const button = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
 
-  button.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
+  <!-- Script buat toggle menu HP biar bisa dibuka/tutup -->
+  <script>
+    const button = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    button.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
 </body>
 </html>

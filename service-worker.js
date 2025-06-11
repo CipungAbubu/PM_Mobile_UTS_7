@@ -1,12 +1,18 @@
 // service-worker.js
 
+// nama cache nya
 const CACHE_NAME = 'heba-site-v1';
+
+// daftar file yang di simpan biar bisa di akses offline
 const urlsToCache = [
   '/',
   '/index.html',
   '/Contact.html',
-  '/About.html', // jika ada
+  '/About.html', 
   '/public/assets/project1.jpg',
+  '/public/assets/GitHub-Mark.jpg',
+  '/public/assets/Instagram_icon.jpg',
+  '/public/assets/LinkedIn-Logo.wine.jpg',
   
   // Tailwind CSS lokal
   '/public/css/tailwind.min.css',

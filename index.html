@@ -1,104 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Menentukan karakter encoding dan tampilan responsif untuk perangkat mobile -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home Page</title>
 
-  <!-- Menambahkan link untuk CDN Tailwind CSS agar bisa pakai kelas-kelas dari Tailwind -->
+  <!-- Link ke Tailwind CSS buat styling gampang pakai class -->
   <link href="/public/css/tailwind.min.css" rel="stylesheet">
 
-  <!-- Menambahkan Font Awesome untuk ikon sosial media seperti Instagram, GitHub, LinkedIn -->
+  <!-- Link ke Font Awesome biar bisa pakai icon-icon medsos -->
   <link href="/public/fontawesome-free-6.7.2-web/css/all.min.css" rel="stylesheet">
 
   <style>
-    /* Bagian styling untuk layout responsif */
     @media (min-width: 640px) {
       .home-container {
-        grid-template-columns: 1fr 1fr; /* Membuat dua kolom untuk layar kecil dan lebih besar */
-        gap: 20px; /* Menambahkan jarak antar elemen */
+        grid-template-columns: 1fr 1fr;
+        gap: 20px; 
       }
     }
 
-    /* Untuk layar lebih besar lagi (tablet ke atas) */
     @media (min-width: 1024px) {
       .home-container {
-        grid-template-columns: 1fr 1fr; /* Tetap dua kolom */
+        grid-template-columns: 1fr 1fr; 
       }
     }
 
-    /* Styling untuk gambar agar responsif dan tidak melebar melebihi batas */
+    /* Biar gambar nggak keluar-keluar dari box-nya */
     img {
-      max-width: 100%; /* Gambar mengikuti lebar container */
-      height: auto; /* Mengatur tinggi gambar otomatis agar proporsional */
+      max-width: 100%;
+      height: auto;
     }
 
-    /* Animasi untuk tulisan "Welcome" */
+    /* Animasi buat tulisan "Welcome" */
     @keyframes moveText {
       0% {
-        transform: translateX(-100%); /* Mulai dari luar layar sebelah kiri */
+        transform: translateX(-100%); 
       }
       50% {
-        transform: translateX(20px); /* Bergerak sedikit ke kanan */
+        transform: translateX(20px);
       }
       100% {
-        transform: translateX(0); /* Berhenti di posisi semula */
+        transform: translateX(0); 
       }
     }
 
-    /* Menerapkan animasi pada teks dengan class animated-text */
+    /* Animasi */
     .animated-text {
-      animation: moveText 2s ease-out forwards; /* Durasi animasi 2 detik */
+      animation: moveText 2s ease-out forwards; /* 2 detik animasi */
     }
 
-    /* Tambahkan ini di bagian style untuk memastikan menu dan tombol bisa diklik */
-#mobile-menu-button {
-  z-index: 20;
-  position: relative;
-}
+    /* Biar tombol menu mobile bisa diklik dan muncul di atas */
+    #mobile-menu-button {
+      z-index: 20;
+      position: relative;
+    }
 
-#mobile-menu {
-  z-index: 30;
-}
+    #mobile-menu {
+      z-index: 30;
+    }
   </style>
 </head>
 <body class="bg-gray-100">
 
-  <!-- Bagian Header -->
+  <!-- Header bagian atas halaman -->
   <header class="bg-gray-800 text-white p-4 flex justify-between items-center sticky top-0 z-10">
+    <!-- Logo atau inisial nama -->
     <div class="text-3xl font-bold text-gray-100">
-      H <!-- Nama atau Logo bisa disini -->
+      H
     </div>
 
-    <!-- Navigasi untuk desktop -->
+    <!-- Menu navigasi versi desktop -->
     <nav class="hidden md:flex space-x-6">
       <a href="index.html" class="hover:bg-gray-600 px-4 py-2 rounded">Home</a>
       <a href="About.html" class="hover:bg-gray-600 px-4 py-2 rounded">About</a>
       <a href="Contact.html" class="hover:bg-gray-600 px-4 py-2 rounded">Contact</a>
     </nav>
 
-    <!-- Menu untuk tampilan mobile -->
-    <!-- Menu untuk tampilan mobile -->
-<nav class="md:hidden relative">
-  <button id="mobile-menu-button" class="text-white focus:outline-none">
-    Menu
-  </button>
-  <div id="mobile-menu" class="absolute right-0 mt-2 bg-gray-800 text-white rounded shadow-lg w-40 hidden">
-    <a href="index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
-    <a href="About.html" class="block px-4 py-2 hover:bg-gray-600">About</a>
-    <a href="Contact.html" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
-  </div>
-</nav>
+    <!-- Menu navigasi versi HP (mobile) -->
+    <nav class="md:hidden relative">
+      <!-- Tombol buat buka/tutup menu -->
+      <button id="mobile-menu-button" class="text-white focus:outline-none">
+        Menu
+      </button>
+      <!-- Daftar menu yang bakal muncul pas tombol diklik -->
+      <div id="mobile-menu" class="absolute right-0 mt-2 bg-gray-800 text-white rounded shadow-lg w-40 hidden">
+        <a href="index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
+        <a href="About.html" class="block px-4 py-2 hover:bg-gray-600">About</a>
+        <a href="Contact.html" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Bagian Konten Utama -->
+  <!-- Isi utama halaman -->
   <div class="flex items-center justify-center min-h-screen px-6 py-8">
     <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-12 w-full max-w-7xl">
 
-      <!-- Bagian Teks -->
+      <!-- Kolom teks perkenalan -->
       <div class="text-left max-w-lg">
-        <!-- Judul dengan animasi -->
+        <!-- Judul pakai animasi -->
         <h1 class="text-5xl font-extrabold text-gray-800 mb-4 animated-text">
           Welcome
         </h1>
@@ -109,7 +108,7 @@
           I'm a student majoring in Informatics. Passionate about technology and eager to create innovative solutions.
         </p>
 
-        <!-- Ikon Sosial Media -->
+        <!-- Icon medsos -->
         <div class="flex space-x-4 mt-6">
           <!-- Instagram -->
           <a href="https://www.instagram.com/maryaheba_?igsh=MTJvZ2NrdmZ6cGF1Mw==" target="_blank" rel="noopener noreferrer">
@@ -128,7 +127,7 @@
         </div>
       </div>
 
-      <!-- Bagian Gambar -->
+      <!-- Kolom gambar -->
       <div class="w-full sm:w-72 sm:h-96 md:w-96 md:h-128">
         <img 
           src="./public/assets/project1.jpg" 
@@ -139,6 +138,8 @@
 
     </div>
   </div>
+
+<!-- Script untuk toggle menu HP (biar bisa buka tutup menu) -->
 <script>
   const button = document.getElementById('mobile-menu-button');
   const menu = document.getElementById('mobile-menu');
@@ -148,7 +149,8 @@
   });
 </script>
 
-  <script>
+<!-- Daftarin service worker buat PWA (kalau support) -->
+<script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker
