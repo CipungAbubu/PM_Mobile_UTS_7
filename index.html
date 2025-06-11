@@ -7,10 +7,10 @@
   <title>Home Page</title>
 
   <!-- Menambahkan link untuk CDN Tailwind CSS agar bisa pakai kelas-kelas dari Tailwind -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="/public/css/tailwind.min.css" rel="stylesheet">
 
   <!-- Menambahkan Font Awesome untuk ikon sosial media seperti Instagram, GitHub, LinkedIn -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Tf0pZQZkGpGlmDybXJk0EIlFuOatZTnAiRMspnI1ViKzBmy+CSdNykg0N5C7Q3sOXTo6r/NBxfO6i80yCzUM4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="/public/fontawesome-free-6.7.2-web/css/all.min.css" rel="stylesheet">
 
   <style>
     /* Bagian styling untuk layout responsif */
@@ -51,6 +51,16 @@
     .animated-text {
       animation: moveText 2s ease-out forwards; /* Durasi animasi 2 detik */
     }
+
+    /* Tambahkan ini di bagian style untuk memastikan menu dan tombol bisa diklik */
+#mobile-menu-button {
+  z-index: 20;
+  position: relative;
+}
+
+#mobile-menu {
+  z-index: 30;
+}
   </style>
 </head>
 <body class="bg-gray-100">
@@ -69,9 +79,17 @@
     </nav>
 
     <!-- Menu untuk tampilan mobile -->
-    <nav class="md:hidden">
-      <button class="text-white">Menu</button>
-    </nav>
+    <!-- Menu untuk tampilan mobile -->
+<nav class="md:hidden relative">
+  <button id="mobile-menu-button" class="text-white focus:outline-none">
+    Menu
+  </button>
+  <div id="mobile-menu" class="absolute right-0 mt-2 bg-gray-800 text-white rounded shadow-lg w-40 hidden">
+    <a href="index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
+    <a href="About.html" class="block px-4 py-2 hover:bg-gray-600">About</a>
+    <a href="Contact.html" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
+  </div>
+</nav>
   </header>
 
   <!-- Bagian Konten Utama -->
@@ -95,17 +113,17 @@
         <div class="flex space-x-4 mt-6">
           <!-- Instagram -->
           <a href="https://www.instagram.com/maryaheba_?igsh=MTJvZ2NrdmZ6cGF1Mw==" target="_blank" rel="noopener noreferrer">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-8 h-8"/>
+            <img src="./public/assets/Instagram_icon.jpg" alt="Instagram" class="w-8 h-8"/>
           </a>
 
           <!-- GitHub -->
           <a href="https://github.com/CipungAbubu" target="_blank" rel="noopener noreferrer">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="w-8 h-8"/>
+            <img src="./public/assets/GitHub-Mark.jpg" alt="GitHub" class="w-8 h-8"/>
           </a>
 
           <!-- LinkedIn -->
           <a href="https://www.linkedin.com/in/heba-a-raaf/" target="_blank" rel="noopener noreferrer">
-            <img src="https://www.logo.wine/a/logo/LinkedIn/LinkedIn-Logo.wine.svg" alt="LinkedIn" class="w-8 h-8"/>
+            <img src="./public/assets/LinkedIn-Logo.wine.jpg" alt="LinkedIn" class="w-8 h-8"/>
           </a>
         </div>
       </div>
@@ -121,6 +139,28 @@
 
     </div>
   </div>
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
 
+  button.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then((reg) => {
+          console.log('Service Worker registered: ', reg);
+        })
+        .catch((err) => {
+          console.error('Service Worker registration failed: ', err);
+        });
+    });
+  }
+</script>
 </body>
 </html>

@@ -10,8 +10,9 @@
   <!-- Title halaman yang akan ditampilkan di tab browser -->
   <title>About Me</title>
   
-  <!-- Link untuk menyertakan file CSS Tailwind versi 2.0.3, yang digunakan untuk styling halaman agar lebih mudah dan cepat -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Link ke file Tailwind CSS versi 2.0.3 lokal -->
+<link href="/public/css/tailwind-2.0.3.min.css" rel="stylesheet">
+
 </head>
 <body class="bg-gray-100">
 
@@ -30,11 +31,18 @@
       <a href="Contact.html" class="hover:bg-gray-600 px-4 py-2 rounded">Contact</a>
     </nav>
 
-    <!-- Menu navigasi yang tampil saat tampilan di perangkat mobile -->
-    <nav class="md:hidden">
-      <!-- Tombol untuk menu yang hanya muncul di perangkat mobile -->
-      <button class="text-white">Menu</button>
-    </nav>
+    <!-- Menu untuk tampilan mobile -->
+<nav class="md:hidden relative">
+  <button id="mobile-menu-button" class="text-white focus:outline-none">
+    Menu
+  </button>
+  <div id="mobile-menu" class="absolute right-0 mt-2 bg-gray-800 text-white rounded shadow-lg w-40 hidden">
+    <a href="index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
+    <a href="About.html" class="block px-4 py-2 hover:bg-gray-600">About</a>
+    <a href="Contact.html" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
+  </div>
+</nav>
+
   </header>
 
   <!-- Bagian Konten Utama 'About Me' -->
@@ -65,6 +73,14 @@
       </div>
     </div>
   </div>
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  button.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
 
 </body>
 </html>

@@ -7,12 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Me</title>
 
-  <!-- Link ke CSS Tailwind untuk styling halaman -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Menambahkan link untuk CDN Tailwind CSS agar bisa pakai kelas-kelas dari Tailwind -->
+  <link href="/public/css/tailwind.min.css" rel="stylesheet">
   
-  <!-- Link ke icon library untuk menampilkan ikon yang lebih keren -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/react-icons/4.2.0/react-icons.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="/public/fontawesome-free-6.7.2-web/css/all.min.css" rel="stylesheet">
 
   <!-- Tambahan untuk membuat tampilan responsif (menyesuaikan layar perangkat) -->
   <style>
@@ -68,10 +66,17 @@
       <a href="Contact.html" class="hover:bg-gray-600 px-4 py-2 rounded">Contact</a>
     </nav>
 
-    <!-- Menu untuk tampilan mobile (tombol untuk menu dropdown) -->
-    <nav class="md:hidden">
-      <button class="text-white">Menu</button>
-    </nav>
+    <!-- Menu untuk tampilan mobile -->
+<nav class="md:hidden relative">
+  <button id="mobile-menu-button" class="text-white focus:outline-none">
+    Menu
+  </button>
+  <div id="mobile-menu" class="absolute right-0 mt-2 bg-gray-800 text-white rounded shadow-lg w-40 hidden">
+    <a href="index.html" class="block px-4 py-2 hover:bg-gray-600">Home</a>
+    <a href="About.html" class="block px-4 py-2 hover:bg-gray-600">About</a>
+    <a href="Contact.html" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
+  </div>
+</nav>
   </header>
 
   <!-- Bagian Konten utama dari halaman Contact -->
@@ -113,6 +118,14 @@
       </div>
     </div>
   </div>
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  button.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
 
 </body>
 </html>
